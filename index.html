@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACERO EN EL SUR — Metal Argentino IA</title>
 <meta name="description" content="Metal forjado con inteligencia artificial sobre la historia y la identidad argentina. Escuchá, seguí y sumate a la Recluta.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ACERO EN EL SUR — Metal Argentino IA">
+<meta property="og:description" content="Metal forjado con inteligencia artificial sobre la historia y la identidad argentina. Andes de Hierro — 17 de agosto.">
+<meta property="og:image" content="https://pablodasalinas-cpu.github.io/og-image.png">
+<meta property="og:url" content="https://pablodasalinas-cpu.github.io">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACERO EN EL SUR — Metal Argentino IA">
+<meta name="twitter:description" content="Metal forjado con inteligencia artificial sobre la historia y la identidad argentina.">
+<meta name="twitter:image" content="https://pablodasalinas-cpu.github.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -269,6 +278,59 @@
     padding:8px 14px;
   }
 
+  /* ---------- COUNTDOWN ---------- */
+  .countdown{
+    display:flex; gap:22px;
+    margin-top:32px;
+  }
+  .cd-unit{
+    display:flex; flex-direction:column; align-items:center;
+    min-width:58px;
+  }
+  .cd-num{
+    font-family:'Teko',sans-serif; font-weight:600;
+    font-size:2.6rem; line-height:1;
+    color:var(--rust-bright);
+    text-shadow:0 0 20px rgba(224,122,58,0.2);
+    font-variant-numeric:tabular-nums;
+  }
+  .cd-label{
+    font-family:'Oswald',sans-serif; font-size:0.65rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--ash-dim); margin-top:2px;
+  }
+  .countdown-caption{
+    font-size:0.8rem; color:var(--ash-dim); margin-top:10px; font-style:italic;
+  }
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap{
+    display:flex; flex-direction:column; gap:0;
+  }
+  .rm-item{
+    display:grid; grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--graphite-2);
+    align-items:start;
+  }
+  .rm-item:first-child{padding-top:0;}
+  .rm-item:last-child{border-bottom:none;}
+  .rm-date{
+    font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.08em;
+    color:var(--rust-bright); font-weight:600; text-transform:uppercase;
+  }
+  .rm-status{
+    display:inline-block; margin-top:8px;
+    font-family:'Oswald',sans-serif; font-size:0.62rem; letter-spacing:0.1em;
+    text-transform:uppercase; padding:3px 8px;
+    border:1px solid var(--iron); color:var(--ash-dim);
+  }
+  .rm-status.live{border-color:var(--rust-bright); color:var(--rust-bright);}
+  .rm-title{
+    font-family:'Oswald',sans-serif; font-size:1.1rem; color:var(--ash); font-weight:600;
+  }
+  .rm-desc{color:var(--ash-dim); font-size:0.9rem; margin-top:6px; line-height:1.6; max-width:56ch;}
+
   /* ---------- SPOTIFY EMBED ---------- */
   .spotify-embed{
     border:1px solid var(--graphite-2);
@@ -434,6 +496,7 @@
     <a class="navlink" href="#galeria">Galería</a>
     <a class="navlink" href="#escuchar">Escuchar</a>
     <a class="navlink" href="#merch">Merch</a>
+    <a class="navlink" href="#roadmap">Roadmap</a>
     <a class="navlink" href="#comision">Comisiones</a>
   </div>
 </nav>
@@ -473,6 +536,13 @@
         <h3>Andes de Hierro</h3>
         <p>Un homenaje al cruce de los Andes de San Martín: la marcha, el frío, el hierro y la voluntad de un ejército que cruzó la cordillera para forjar la libertad de un continente. Grabado y montado íntegramente con IA — audio, imagen y edición.</p>
         <a class="btn btn-solid" href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">Acceso anticipado en Ko-fi</a>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Días</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hs</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Min</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seg</span></div>
+        </div>
+        <div class="countdown-caption">para el acceso anticipado Recluta (13/8)</div>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -618,6 +688,55 @@
   </div>
 </section>
 
+<section id="roadmap">
+  <div class="section-head">
+    <div class="eyebrow">La marcha</div>
+    <h2>Próximos pasos</h2>
+  </div>
+  <div class="roadmap">
+    <div class="rm-item">
+      <div>
+        <div class="rm-date">13 – 14 Ago</div>
+        <span class="rm-status live">Próximo</span>
+      </div>
+      <div>
+        <div class="rm-title">Andes de Hierro — acceso anticipado</div>
+        <div class="rm-desc">Estreno exclusivo para miembros Recluta en Ko-fi, 3 días antes que el resto del mundo.</div>
+      </div>
+    </div>
+    <div class="rm-item">
+      <div>
+        <div class="rm-date">17 Ago</div>
+        <span class="rm-status live">Próximo</span>
+      </div>
+      <div>
+        <div class="rm-title">Andes de Hierro — estreno público</div>
+        <div class="rm-desc">Lanzamiento en YouTube y Spotify, coincidiendo con el aniversario del Cruce de los Andes.</div>
+      </div>
+    </div>
+    <div class="rm-item">
+      <div>
+        <div class="rm-date">Próximamente</div>
+        <span class="rm-status">En curso</span>
+      </div>
+      <div>
+        <div class="rm-title">Remera El Centinela del Sur</div>
+        <div class="rm-desc">Primera pieza de merch oficial, disponible en Etsy vía Printful.</div>
+      </div>
+    </div>
+    <div class="rm-item">
+      <div>
+        <div class="rm-date">En desarrollo</div>
+        <span class="rm-status">En curso</span>
+      </div>
+      <div>
+        <div class="rm-title">Próximo himno histórico</div>
+        <div class="rm-desc">Nueva canción en producción — audio, video e identidad visual en camino.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="comision">
   <div class="commission">
     <div>
@@ -646,5 +765,37 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  // Cuenta regresiva hasta el 13 de agosto de 2026, 00:00 hora Argentina (UTC-3)
+  var target = new Date("2026-08-13T00:00:00-03:00").getTime();
+  var elD = document.getElementById('cd-days');
+  var elH = document.getElementById('cd-hours');
+  var elM = document.getElementById('cd-mins');
+  var elS = document.getElementById('cd-secs');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var now = new Date().getTime();
+    var diff = target - now;
+    if(diff <= 0){
+      elD.textContent = '00'; elH.textContent = '00'; elM.textContent = '00'; elS.textContent = '00';
+      var cap = document.querySelector('.countdown-caption');
+      if(cap) cap.textContent = '¡Ya está disponible!';
+      clearInterval(timer);
+      return;
+    }
+    var days = Math.floor(diff / (1000*60*60*24));
+    var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    var secs = Math.floor((diff % (1000*60)) / 1000);
+    elD.textContent = pad(days);
+    elH.textContent = pad(hours);
+    elM.textContent = pad(mins);
+    elS.textContent = pad(secs);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
