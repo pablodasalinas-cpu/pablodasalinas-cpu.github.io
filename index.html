@@ -358,9 +358,12 @@
     display:flex;
     align-items:flex-end;
   }
-  .gallery-item svg{
+  .gallery-item img{
     position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover;
+    transition:transform 0.4s ease;
   }
+  .gallery-item:hover img{ transform:scale(1.04); }
   .gallery-item .gi-label{
     position:relative; z-index:2;
     padding:20px;
@@ -582,46 +585,27 @@
   </div>
   <div class="gallery-grid">
     <div class="gallery-item">
-      <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMax slice">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#191714"/><stop offset="100%" stop-color="#0a0908"/></linearGradient></defs>
-        <rect width="300" height="375" fill="url(#g1)"/>
-        <path d="M0,375 L0,240 L50,210 L90,250 L140,170 L190,230 L230,190 L270,250 L300,220 L300,375 Z" fill="#221f1b"/>
-        <path d="M0,240 L50,210 L90,250 L140,170 L190,230 L230,190 L270,250 L300,220" fill="none" stroke="#c05a24" stroke-width="1.2" opacity="0.7"/>
-        <circle cx="140" cy="170" r="2.4" fill="#e07a3a"/>
-      </svg>
+      <img src="malvinas.jpg" alt="Infierno Blanco... Noche de Acero — homenaje a los veteranos de Malvinas">
       <div class="gi-label">
         <div class="gi-eyebrow">Video</div>
-        <div class="gi-title">Malvinas</div>
+        <div class="gi-title">Infierno Blanco... Noche de Acero</div>
       </div>
     </div>
     <div class="gallery-item">
-      <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMax slice">
-        <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1c1a18"/><stop offset="100%" stop-color="#0a0908"/></linearGradient></defs>
-        <rect width="300" height="375" fill="url(#g2)"/>
-        <path d="M0,375 L0,260 L60,230 L110,270 L160,200 L210,260 L260,220 L300,260 L300,375 Z" fill="#221f1b"/>
-        <path d="M0,260 L60,230 L110,270 L160,200 L210,260 L260,220 L300,260" fill="none" stroke="#7a1c14" stroke-width="1.2" opacity="0.75"/>
-        <circle cx="160" cy="200" r="2.4" fill="#b8321f"/>
-      </svg>
+      <img src="revolucion-mayo.jpg" alt="Revolución de Mayo — heavy metal argentino, himno de guerra 1810">
       <div class="gi-label">
         <div class="gi-eyebrow">Video</div>
         <div class="gi-title">Revolución de Mayo</div>
       </div>
     </div>
     <div class="gallery-item">
-      <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMax slice">
-        <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#191714"/><stop offset="100%" stop-color="#0a0908"/></linearGradient></defs>
-        <rect width="300" height="375" fill="url(#g3)"/>
-        <path d="M0,375 L0,250 L40,220 L80,260 L130,180 L180,240 L220,200 L260,255 L300,230 L300,375 Z" fill="#221f1b"/>
-        <path d="M0,250 L40,220 L80,260 L130,180 L180,240 L220,200 L260,255 L300,230" fill="none" stroke="#c05a24" stroke-width="1.2" opacity="0.7"/>
-        <circle cx="130" cy="180" r="2.4" fill="#e07a3a"/>
-      </svg>
+      <img src="mundial2026.jpg" alt="Sangre Albiceleste — himno Mundial 2026">
       <div class="gi-label">
         <div class="gi-eyebrow">Video</div>
-        <div class="gi-title">Mundial 2026</div>
+        <div class="gi-title">Sangre Albiceleste</div>
       </div>
     </div>
   </div>
-  <p class="gallery-note">* Espacio reservado — reemplazá estos tres paneles por miniaturas reales de tus videos cuando quieras.</p>
 </section>
 
 <section id="escuchar">
