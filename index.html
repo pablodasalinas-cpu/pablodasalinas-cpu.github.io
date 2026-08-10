@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACERO EN EL SUR — Metal Argentino IA</title>
+<meta name="description" content="Metal forjado con inteligencia artificial sobre la historia y la identidad argentina. Escuchá, seguí y sumate a la Recluta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0908;
+    --graphite:#191714;
+    --graphite-2:#221f1b;
+    --iron:#4a453c;
+    --ash:#e6ded0;
+    --ash-dim:#a89e8c;
+    --rust:#c05a24;
+    --rust-bright:#e07a3a;
+    --ember:#7a1c14;
+    --ember-bright:#b8321f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--ash);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.02em;}
+
+  .eyebrow{
+    font-family:'Oswald',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--rust-bright);
+    font-weight:500;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 6vw;
+    background:linear-gradient(180deg, rgba(10,9,8,0.92), rgba(10,9,8,0));
+    backdrop-filter:blur(2px);
+  }
+  .wordmark{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.18em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .wordmark .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--rust-bright);
+    box-shadow:0 0 8px 2px rgba(224,122,58,0.7);
+    animation:flicker 3.4s infinite ease-in-out;
+  }
+  @keyframes flicker{
+    0%,100%{opacity:1;}
+    45%{opacity:0.55;}
+    50%{opacity:1;}
+    72%{opacity:0.7;}
+  }
+  nav a.navlink{
+    font-family:'Oswald',sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ash-dim);
+    margin-left:28px;
+    transition:color 0.2s;
+  }
+  nav a.navlink:hover{color:var(--rust-bright);}
+  .nav-links{display:flex;}
+  @media (max-width:720px){ .nav-links{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:0 6vw 0 6vw;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 15%, rgba(122,28,20,0.22), transparent 60%),
+      linear-gradient(180deg, #0a0908 0%, #0e0c0a 55%, #14100c 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    padding-top:160px;
+    padding-bottom:40px;
+    max-width:920px;
+  }
+  .hero-eyebrow{margin-bottom:18px;}
+  .hero h1{
+    font-family:'Teko',sans-serif;
+    font-weight:600;
+    font-size:clamp(3.4rem, 10vw, 7.8rem);
+    line-height:0.92;
+    color:var(--ash);
+    letter-spacing:0.01em;
+  }
+  .hero h1 .accent{
+    color:var(--rust-bright);
+    text-shadow:0 0 30px rgba(224,122,58,0.25);
+  }
+  .hero-sub{
+    font-size:1.05rem;
+    line-height:1.6;
+    color:var(--ash-dim);
+    max-width:520px;
+    margin-top:18px;
+    font-weight:400;
+  }
+  .hero-cta{
+    display:flex; gap:16px; flex-wrap:wrap;
+    margin-top:36px;
+  }
+  .btn{
+    font-family:'Oswald',sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:15px 30px;
+    border-radius:2px;
+    transition:all 0.2s ease;
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .btn-solid{
+    background:var(--rust-bright);
+    color:var(--black);
+  }
+  .btn-solid:hover{background:var(--ash); }
+  .btn-outline{
+    border:1px solid var(--iron);
+    color:var(--ash);
+  }
+  .btn-outline:hover{border-color:var(--rust-bright); color:var(--rust-bright);}
+
+  /* Andes silhouette signature element */
+  .andes{
+    position:relative; z-index:2;
+    width:100%;
+    height:clamp(120px,22vw,240px);
+    margin-top:64px;
+  }
+  .andes svg{width:100%; height:100%; display:block;}
+  .andes-line{
+    fill:none;
+    stroke:var(--rust-bright);
+    stroke-width:1.4;
+    opacity:0.85;
+  }
+  .andes-fill{
+    fill:var(--graphite);
+  }
+  .ember-dot{
+    fill:var(--ember-bright);
+    filter:drop-shadow(0 0 6px rgba(184,50,31,0.9));
+    animation:ember-pulse 2.6s infinite ease-in-out;
+  }
+  @keyframes ember-pulse{
+    0%,100%{opacity:0.4; r:2.2;}
+    50%{opacity:1; r:3.2;}
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{
+    padding:120px 6vw;
+    position:relative;
+  }
+  .section-head{
+    display:flex; align-items:baseline; gap:18px;
+    margin-bottom:56px;
+    border-bottom:1px solid var(--graphite-2);
+    padding-bottom:22px;
+  }
+  .section-head h2{
+    font-size:clamp(1.8rem,3.4vw,2.6rem);
+    font-weight:600;
+    color:var(--ash);
+  }
+
+  /* ---------- FEATURED RELEASE ---------- */
+  .featured{
+    background:var(--graphite);
+    border:1px solid var(--graphite-2);
+    border-radius:2px;
+    padding:56px 6vw;
+    margin-top:-40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .featured::before{
+    content:"";
+    position:absolute; top:0; left:0; width:4px; height:100%;
+    background:linear-gradient(180deg, var(--rust-bright), var(--ember));
+  }
+  .featured-grid{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:center;
+  }
+  @media (max-width:860px){ .featured-grid{grid-template-columns:1fr;} }
+  .featured h3{
+    font-family:'Teko',sans-serif;
+    font-weight:600;
+    font-size:clamp(2.6rem,5.5vw,4.2rem);
+    line-height:0.95;
+    color:var(--ash);
+    margin:14px 0 18px;
+  }
+  .featured p{color:var(--ash-dim); line-height:1.7; margin-bottom:26px; max-width:52ch;}
+  .timeline{
+    display:flex; flex-direction:column; gap:0;
+    border-left:1px solid var(--iron);
+    padding-left:24px;
+  }
+  .timeline-item{
+    position:relative; padding-bottom:28px;
+  }
+  .timeline-item:last-child{padding-bottom:0;}
+  .timeline-item::before{
+    content:"";
+    position:absolute; left:-29px; top:5px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--black); border:2px solid var(--rust-bright);
+  }
+  .timeline-item .t-date{
+    font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.14em;
+    color:var(--rust-bright); text-transform:uppercase; font-weight:600;
+  }
+  .timeline-item .t-label{color:var(--ash); font-size:0.95rem; margin-top:4px;}
+
+  /* ---------- MANIFESTO ---------- */
+  .manifesto{
+    max-width:760px;
+  }
+  .manifesto p{
+    font-size:1.35rem;
+    line-height:1.65;
+    color:var(--ash-dim);
+    font-weight:400;
+  }
+  .manifesto p + p{margin-top:24px;}
+  .manifesto strong{color:var(--ash); font-weight:600;}
+  .manifesto-tags{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:40px;
+  }
+  .tag{
+    font-family:'Oswald',sans-serif;
+    font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase;
+    border:1px solid var(--graphite-2);
+    color:var(--ash-dim);
+    padding:8px 14px;
+  }
+
+  /* ---------- LINKS GRID ---------- */
+  .links-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--graphite-2);
+    border:1px solid var(--graphite-2);
+  }
+  @media (max-width:860px){ .links-grid{grid-template-columns:repeat(2,1fr);} }
+  .link-card{
+    background:var(--black);
+    padding:38px 26px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:background 0.2s;
+    min-height:150px;
+    justify-content:space-between;
+  }
+  .link-card:hover{background:var(--graphite);}
+  .link-card .lc-name{
+    font-family:'Oswald',sans-serif;
+    font-size:1rem; font-weight:600; letter-spacing:0.04em;
+    color:var(--ash);
+  }
+  .link-card .lc-sub{
+    font-size:0.82rem; color:var(--ash-dim);
+  }
+  .link-card .lc-arrow{
+    font-size:0.78rem; color:var(--rust-bright);
+    font-family:'Oswald',sans-serif; letter-spacing:0.1em;
+  }
+
+  /* ---------- COMMISSION ---------- */
+  .commission{
+    background:linear-gradient(160deg, var(--graphite) 0%, var(--black) 100%);
+    border:1px solid var(--graphite-2);
+    padding:64px 6vw;
+    display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:center;
+  }
+  @media (max-width:860px){ .commission{grid-template-columns:1fr;} }
+  .commission h2{
+    font-family:'Teko',sans-serif; font-weight:600;
+    font-size:clamp(2.2rem,4.5vw,3.4rem); line-height:0.98; color:var(--ash);
+  }
+  .commission p{color:var(--ash-dim); line-height:1.7; margin-top:16px; max-width:52ch;}
+  .commission-steps{
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .cstep{display:flex; gap:14px; align-items:flex-start;}
+  .cstep .ci{
+    font-family:'Teko',sans-serif; font-size:1.6rem; color:var(--rust-bright); line-height:1;
+    min-width:34px;
+  }
+  .cstep .ct{font-size:0.92rem; color:var(--ash-dim); line-height:1.5; padding-top:3px;}
+  .cstep b{color:var(--ash); font-weight:600;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:60px 6vw 40px;
+    border-top:1px solid var(--graphite-2);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  footer .fmark{
+    font-family:'Oswald',sans-serif; letter-spacing:0.14em; font-size:0.85rem; color:var(--ash-dim);
+  }
+  footer .fmark b{color:var(--ash);}
+  .foot-links{display:flex; gap:24px;}
+  .foot-links a{
+    font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ash-dim);
+  }
+  .foot-links a:hover{color:var(--rust-bright);}
+
+  ::selection{background:var(--rust-bright); color:var(--black);}
+  :focus-visible{outline:2px solid var(--rust-bright); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wordmark"><span class="dot"></span>ACERO EN EL SUR</div>
+  <div class="nav-links">
+    <a class="navlink" href="#lanzamiento">Andes de Hierro</a>
+    <a class="navlink" href="#manifiesto">El Proyecto</a>
+    <a class="navlink" href="#escuchar">Escuchar</a>
+    <a class="navlink" href="#comision">Comisiones</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="eyebrow hero-eyebrow">Metal Argentino · Forjado con IA</div>
+    <h1>ACERO<br>EN EL <span class="accent">SUR</span></h1>
+    <p class="hero-sub">Riffs, hierro y memoria. Un proyecto de metal generado con inteligencia artificial que convierte la historia y la identidad argentina en himnos — Malvinas, la Revolución de Mayo, San Martín cruzando la cordillera.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">Unirse a la Recluta</a>
+      <a class="btn btn-outline" href="#escuchar">Escuchar ahora</a>
+    </div>
+  </div>
+
+  <div class="andes" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+      <path class="andes-fill" d="M0,220 L0,140 L60,110 L140,150 L210,70 L270,120 L340,40 L400,100 L470,55 L540,130 L610,20 L680,95 L750,60 L820,140 L890,75 L960,150 L1030,90 L1100,160 L1160,120 L1200,150 L1200,220 Z"/>
+      <path class="andes-line" d="M0,140 L60,110 L140,150 L210,70 L270,120 L340,40 L400,100 L470,55 L540,130 L610,20 L680,95 L750,60 L820,140 L890,75 L960,150 L1030,90 L1100,160 L1160,120 L1200,150"/>
+      <circle class="ember-dot" cx="610" cy="20" r="2.6"/>
+      <circle class="ember-dot" cx="340" cy="40" r="2.2" style="animation-delay:0.8s"/>
+      <circle class="ember-dot" cx="890" cy="75" r="2.2" style="animation-delay:1.6s"/>
+    </svg>
+  </div>
+</header>
+
+<section id="lanzamiento">
+  <div class="section-head">
+    <div class="eyebrow">17 de Agosto</div>
+    <h2>Lanzamiento — Andes de Hierro</h2>
+  </div>
+  <div class="featured">
+    <div class="featured-grid">
+      <div>
+        <div class="eyebrow">Tributo · Cruce de los Andes</div>
+        <h3>Andes de Hierro</h3>
+        <p>Un homenaje al cruce de los Andes de San Martín: la marcha, el frío, el hierro y la voluntad de un ejército que cruzó la cordillera para forjar la libertad de un continente. Grabado y montado íntegramente con IA — audio, imagen y edición.</p>
+        <a class="btn btn-solid" href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">Acceso anticipado en Ko-fi</a>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t-date">13 – 14 de Agosto</div>
+          <div class="t-label">Estreno exclusivo para miembros Recluta en Ko-fi</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-date">17 de Agosto</div>
+          <div class="t-label">Estreno público en YouTube y Spotify</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="manifiesto">
+  <div class="section-head">
+    <div class="eyebrow">El Proyecto</div>
+    <h2>Historia forjada en riff y hierro</h2>
+  </div>
+  <div class="manifesto">
+    <p><strong>Acero en el Sur</strong> nació el 8 de marzo de 2026 en Buenos Aires, cruzando el metal pesado — Thrash, Power, Doom, Groove, Sinfónico, Industrial, Gótico — con la identidad y la historia argentina.</p>
+    <p>Cada canción se construye con IA: <strong>Suno</strong> para el audio, <strong>Google Flow</strong> para las imágenes y clips, y <strong>ffmpeg</strong> para el montaje final. El resultado son himnos sobre Malvinas, la Revolución de Mayo, el Mundial y las gestas que forjaron a un país — con una identidad visual de siluetas, sin rostros identificables, gobernada por El Centinela del Sur.</p>
+    <div class="manifesto-tags">
+      <span class="tag">Historia Argentina</span>
+      <span class="tag">Metal Pesado</span>
+      <span class="tag">100% Generado con IA</span>
+      <span class="tag">El Centinela del Sur</span>
+    </div>
+  </div>
+</section>
+
+<section id="escuchar">
+  <div class="section-head">
+    <div class="eyebrow">Seguí el rastro</div>
+    <h2>Escuchar y seguir</h2>
+  </div>
+  <div class="links-grid">
+    <a class="link-card" href="https://open.spotify.com/artist/2BqUqF5DK5Cc6rwv3SNWbQ" target="_blank" rel="noopener">
+      <div>
+        <div class="lc-name">Spotify</div>
+        <div class="lc-sub">Todo el catálogo, para escuchar</div>
+      </div>
+      <div class="lc-arrow">Escuchar →</div>
+    </a>
+    <a class="link-card" href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">
+      <div>
+        <div class="lc-name">Ko-fi</div>
+        <div class="lc-sub">Recluta: acceso anticipado y apoyo directo</div>
+      </div>
+      <div class="lc-arrow">Sumarme →</div>
+    </a>
+    <a class="link-card" href="https://www.instagram.com/acero_en_el_sur" target="_blank" rel="noopener">
+      <div>
+        <div class="lc-name">Instagram</div>
+        <div class="lc-sub">@acero_en_el_sur</div>
+      </div>
+      <div class="lc-arrow">Seguir →</div>
+    </a>
+    <a class="link-card" href="https://www.tiktok.com/@acero_en_el_sur" target="_blank" rel="noopener">
+      <div>
+        <div class="lc-name">TikTok</div>
+        <div class="lc-sub">@acero_en_el_sur</div>
+      </div>
+      <div class="lc-arrow">Seguir →</div>
+    </a>
+  </div>
+</section>
+
+<section id="comision">
+  <div class="commission">
+    <div>
+      <div class="eyebrow">Servicio</div>
+      <h2>Producción cinemática con IA, a medida</h2>
+      <p>El mismo flujo de trabajo que da vida a Acero en el Sur está disponible para tu proyecto: canciones, videos históricos, tributos o piezas narrativas construidas de punta a punta con inteligencia artificial.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn-outline" href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">Consultar por Ko-fi</a>
+      </div>
+    </div>
+    <div class="commission-steps">
+      <div class="cstep"><span class="ci">01</span><span class="ct"><b>Audio</b> — composición y voces generadas con Suno, ajustadas al subgénero y al tono de la historia.</span></div>
+      <div class="cstep"><span class="ci">02</span><span class="ct"><b>Imagen y video</b> — clips e imágenes con Google Flow, con precisión de época y dirección de arte.</span></div>
+      <div class="cstep"><span class="ci">03</span><span class="ct"><b>Montaje</b> — ensamblado final con ffmpeg: color, ritmo y mezcla de audio.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fmark"><b>ACERO EN EL SUR</b> — El Centinela del Sur vigila desde 2026</div>
+  <div class="foot-links">
+    <a href="https://ko-fi.com/aceroenelsur" target="_blank" rel="noopener">Ko-fi</a>
+    <a href="https://open.spotify.com/artist/2BqUqF5DK5Cc6rwv3SNWbQ" target="_blank" rel="noopener">Spotify</a>
+    <a href="https://www.instagram.com/acero_en_el_sur" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@acero_en_el_sur" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</footer>
+
+</body>
+</html>
